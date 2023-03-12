@@ -6,13 +6,13 @@ db.createUser({
     roles: [
         {
             role: 'readWrite',
-            db: 'innonetwork',
+            db: 'mongodemo',
         },
     ],
 })
 
-db = new Mongo().getDB("innonetwork");
-db.createCollection('innonetwork', { capped: false });
+db = new Mongo().getDB("mongodemo");
+// no need to create collections, collection are build by springboot on startup
 db.createCollection('dummy', { capped: false });
 
 print('END db creation #################################################################');

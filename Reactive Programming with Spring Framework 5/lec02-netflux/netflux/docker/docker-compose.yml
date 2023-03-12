@@ -11,9 +11,6 @@ services:
       - MONGODB_USERNAME=root
       - MONGODB_PASSWORD=root
       - MONGODB_DATABASE=mongodemo
-#      - DB_NAME: springboot-db
-    #  - DB_USER: root
-#      - DB_PASSWORD: root
     volumes:
       - ./data/dbstore/mongodb/:/data/db/
       - ./setup/mongodb/docker-entrypoint-initdb.d/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
@@ -25,6 +22,7 @@ services:
       - 27017:27017
     expose:
       - '27017'
+
   mongo-express:
     image: mongo-express:latest
     container_name: mongo-express
